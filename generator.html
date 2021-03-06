@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    button {
+        width: 100px;
+        height: 20px;
+        border: solid 1px blue;
+        border-radius: 5px;
+    }
+
+</style>
+
+<body>
+    <button onclick="next()">next</button>
+</body>
+<script>
+    var a = 1; b = 2;
+    function* log() {
+        yield loga(a);
+        yield logb(b);
+        return console.log(a, b);
+    }
+    function loga(a) {
+        console.log(a);
+    };
+    function logb(b) {
+        console.log(b);
+    }
+    var cs = log();
+    function next() {
+        cs.next();
+    }
+</script>
+
+</html>

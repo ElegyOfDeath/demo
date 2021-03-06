@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        width: 300px;
+        background: blue;
+        transition: height 0.5s;
+    }
+
+    .noshow {
+        height: 100px;
+    }
+
+    .show {
+        height: 300px;
+    }
+
+    .change {
+        border: solid 1px #000;
+        border-radius: 5px;
+        width: 100px;
+        height: 30px;
+    }
+
+</style>
+
+<body>
+    <div class="box noshow"></div>
+    <button class="change" onclick="change()">change</button>
+</body>
+<script>
+    let flag = false;
+    function change() {
+        let box = document.querySelector('.box');
+        if (flag) {
+            box.classList.add('show');
+            box.classList.remove('noshow');
+        } else {
+            box.classList.add('noshow');
+            box.classList.remove('show');
+        }
+        flag = !flag;
+    }
+</script>
+
+</html>
